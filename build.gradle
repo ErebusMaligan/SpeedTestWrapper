@@ -1,0 +1,18 @@
+apply plugin: 'java'
+
+dependencies {
+	compile fileTree( dir: "../libs", include: ['JUtils.jar', 'TerminalWindow.jar'] )
+}
+
+ext {
+	includeLibs = true
+	copyLibs = true
+	deployedProjDir = "deployed/Tools"
+	deployedLibDir = "./"
+	libDest = "deployed/Tools/libs"
+	jarPathPrefix = "./libs/"
+	
+	mainClass = "speedtst.SpeedTest"
+}
+
+apply from: '../gradle/utilapp.gradle'
